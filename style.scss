@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --shadow-1 : 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow-2 : 0 .5rem 1rem rgba(0,0,0,.15);
+    --shadow-3 : 0 1rem 3rem rgba(0,0,0,.175);
+}
+body {
+    background-color: #e9e9e9;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+html {
+    font-family: poppins;
+}
+
+li {
+    list-style: none;
+}
+a,
+a:hover {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+// header-part-css
+
+header {
+    display: flex;
+    background-color: #131313;
+    padding: 10px;
+    border-bottom: 4px solid rgba(255,255,255,.05);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    .header-logo {
+        width: 20%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .header-content{
+        width: 80%;
+    }
+}
+
+.tab-section {
+    display: flex;
+    position: relative;
+    top: 91px;
+    
+    
+    .tab-menu {
+        // position: fixed;
+        height: 90vh;
+        min-width: 300px;
+        background-color: #333333;
+        color: #fff;
+        overflow: scroll;
+        
+        ul {
+
+            li {
+                display: block;
+                border-bottom: 1px solid rgba(255,255,255,.05);
+
+                a {
+                    display: block;
+                    font-size: 14px;
+                    padding: 15px 10px 15px 20px;
+                    color: #fff;
+                    transition: all .3s ease-in-out;
+
+                    i:nth-child(1) {
+                        margin-right: 15px;
+                    }
+                }
+
+                a:hover {
+                    background-color: #131313;
+                    
+                }
+                
+                .dropdown-item {
+                    position: relative;
+                }
+                .dropdown-item.active {
+                    background-color: #131313;
+                }
+                .dropdown-item::after {
+                    content: "\f107";
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    position: absolute;
+                    right: 15px;
+                    top: 18px;
+                }
+
+                .dropdown-item.active::after {
+                    transform: rotate(180deg);
+                }
+
+                .dropdown-menu {
+                    height: 0;
+                    overflow: hidden;
+                }
+                .dropdown-menu.active {
+                    height: auto;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        width: auto;
+        padding: 20px;
+        text-align: center;
+        .tab-pane {
+            margin-bottom: 20px;
+            display: none;
+            h2 {
+
+            }
+            p{
+
+            }
+        }
+        .tab-pane.active {
+            display: block;
+        }
+    }
+}
